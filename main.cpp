@@ -37,3 +37,53 @@ int main() {
     return 0;
 }
 
+//Newly added functions. This is the menu
+int main_menu()
+    {
+        int input = 0;
+        while(input != 4)
+        {
+            cout << "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice -->";
+            cin >> input;
+            if(input == 1)
+            {
+
+            }
+            else if(input == 2)
+            {
+
+            }
+            else if(input == 3)
+            {
+
+            }
+            else if(input == 4)
+            {
+
+            }
+            else
+            {
+                cout << "Invalid input, please type a valid number (1,2,3,4) to select an option\n";
+            }
+        }
+        
+    }
+
+    void add_Goat(list<Goat> &t,string n[], string c[])
+    {
+        int a = rand() % MAX_AGE;
+        string name = n[rand() % SZ_NAMES];
+        string color = c[rand()% SZ_COLORS];
+        
+    }
+
+    void delete_Goat()
+    {
+
+    }
+
+    void display_Goat()
+    {
+
+    }
+
