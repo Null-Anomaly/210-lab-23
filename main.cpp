@@ -53,18 +53,11 @@ void delete_Goat(list<Goat> &t)
     }
     if(goat_obliterator != -1)
     {
-        int i = 0;
+        t.erase(t.begin());
         for(Goat temp : t)
         {
-            i++;
-            if(i = goat_obliterator)
-            {
-                t.erase(temp);
-            }
+            
         }
-        
-
-        
     }
 
 }
