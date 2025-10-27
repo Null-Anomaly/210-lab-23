@@ -53,14 +53,53 @@ void delete_Goat(list<Goat> &t)
     }
     if(goat_obliterator != -1)
     {
-        t.erase(t.begin());
+        int i = 0;
         for(Goat temp : t)
         {
-            
+            i++;
+            if(i = goat_obliterator-1)
+            {
+                t.remove(temp);
+            }
         }
     }
 
 }
+
+
+//Newly added functions. This is the menu
+int main_menu()
+{
+    int input = 5;
+    while(input != 4)
+    {
+        cout << "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice -->";
+        cin >> input;
+        if(input == 1)
+        {
+            
+        }
+        else if(input == 2)
+        {
+
+        }
+        else if(input == 3)
+        {
+
+        }
+        else if(input == 4)
+        {
+
+        }
+        else
+        {
+            cout << "Invalid input, please type a valid number (1,2,3,4) to select an option\n";
+        }
+    }
+    return 0;
+}
+
+
 
 int main() 
 {
@@ -80,45 +119,11 @@ int main()
     fin1.close();
  
     list<Goat> check;
-    add_goat(check, names, colors);
-    add_goat(check, names, colors);
-    add_goat(check, names, colors);
     display_trip(check);
 
     return 0;
 }
 
-//Newly added functions. This is the menu
-int main_menu()
-    {
-        int input = 5;
-        while(input != 4)
-        {
-            cout << "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice -->";
-            cin >> input;
-            if(input == 1)
-            {
-
-            }
-            else if(input == 2)
-            {
-
-            }
-            else if(input == 3)
-            {
-
-            }
-            else if(input == 4)
-            {
-
-            }
-            else
-            {
-                cout << "Invalid input, please type a valid number (1,2,3,4) to select an option\n";
-            }
-        }
-        return 0;
-    }
 
 
 
