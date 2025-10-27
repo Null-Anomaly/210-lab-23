@@ -74,16 +74,23 @@ int main_menu()
         int a = rand() % MAX_AGE;
         string name = n[rand() % SZ_NAMES];
         string color = c[rand()% SZ_COLORS];
-        
+
+        Goat temp(name,a,color);
+
+        t.push_back(temp);
     }
 
-    void delete_Goat()
+    void delete_Goat(list<Goat> &t)
     {
-
+        t.pop_front();
     }
 
-    void display_Goat()
+    void display_Goat(list<Goat> &t)
     {
-
+        Goat temp;
+        for (int i = 0; i < t.size(); i++)
+        {
+            t.begin()->get_name(); 
+        }
     }
 
