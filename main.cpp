@@ -15,7 +15,9 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 int main_menu();
 
-void display_Goat(list<Goat> &t)
+
+
+void display_trip(list<Goat> t)
 {
     int i = 1;
     for (Goat temp : t)
@@ -25,18 +27,19 @@ void display_Goat(list<Goat> &t)
     }
 }
 
-void add_Goat(list<Goat> &t,string n[], string c[])
+void add_goat(list<Goat> &t,string n[], string c[])
 {
     int a = rand() % MAX_AGE;
     string name = n[rand() % SZ_NAMES];
     string color = c[rand()% SZ_COLORS];
 
-    Goat temp(name,a,color);
+    Goat *temp = new Goat(name,a,color);
 
-    t.push_back(temp);
+    t.push_back(*temp);
 }
 
 int main() {
+    cout << "Test -1";
     srand(time(0));
     bool again;
 
@@ -56,7 +59,7 @@ int main() {
     add_goat(check, names, colors);
     add_goat(check, names, colors);
     add_goat(check, names, colors);
-    display_Goat(check);
+    display_trip(check);
 
     return 0;
 }
@@ -64,7 +67,7 @@ int main() {
 //Newly added functions. This is the menu
 int main_menu()
     {
-        int input = 0;
+        int input = 5;
         while(input != 4)
         {
             cout << "*** GOAT MANAGER 3001 ***\n[1] Add a goat\n[2] Delete a goat\n[3] List goats\n[4] Quit\nChoice -->";
