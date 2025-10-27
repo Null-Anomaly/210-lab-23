@@ -15,6 +15,27 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 int main_menu();
 
+void display_Goat(list<Goat> &t)
+{
+    int i = 1;
+    for (Goat temp : t)
+    {
+        cout << "[" << i << "]  " << temp.get_name() << " (" << temp.get_age() << ", " << temp.get_color() << ")\n";
+        i++;
+    }
+}
+
+void add_Goat(list<Goat> &t,string n[], string c[])
+{
+    int a = rand() % MAX_AGE;
+    string name = n[rand() % SZ_NAMES];
+    string color = c[rand()% SZ_COLORS];
+
+    Goat temp(name,a,color);
+
+    t.push_back(temp);
+}
+
 int main() {
     srand(time(0));
     bool again;
@@ -30,9 +51,12 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
-
-
-
+ 
+    list<Goat> check;
+    add_goat(check, names, colors);
+    add_goat(check, names, colors);
+    add_goat(check, names, colors);
+    display_Goat(check);
 
     return 0;
 }
@@ -66,31 +90,15 @@ int main_menu()
                 cout << "Invalid input, please type a valid number (1,2,3,4) to select an option\n";
             }
         }
-        
+        return 0;
     }
 
-    void add_Goat(list<Goat> &t,string n[], string c[])
-    {
-        int a = rand() % MAX_AGE;
-        string name = n[rand() % SZ_NAMES];
-        string color = c[rand()% SZ_COLORS];
 
-        Goat temp(name,a,color);
-
-        t.push_back(temp);
-    }
 
     void delete_Goat(list<Goat> &t)
     {
         t.pop_front();
     }
 
-    void display_Goat(list<Goat> &t)
-    {
-        Goat temp;
-        for (int i = 0; i < t.size(); i++)
-        {
-            t.begin()->get_name(); 
-        }
-    }
+
 
