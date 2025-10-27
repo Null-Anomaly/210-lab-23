@@ -38,8 +38,39 @@ void add_goat(list<Goat> &t,string n[], string c[])
     t.push_back(*temp);
 }
 
-int main() {
-    cout << "Test -1";
+void delete_Goat(list<Goat> &t)
+{
+    display_trip(t);
+    
+    int goat_obliterator;
+    cout << "Please select which goat you wish to eradicate.";
+    cin >> goat_obliterator;
+
+    while (goat_obliterator >= t.size() && goat_obliterator != -1)
+    {
+        cout << "Please choose a number in range to remove a goat, or enter -1 to recind your judgement";
+        cin >> goat_obliterator;
+    }
+    if(goat_obliterator != -1)
+    {
+        int i = 0;
+        for(Goat temp : t)
+        {
+            i++;
+            if(i = goat_obliterator)
+            {
+                t.erase(temp);
+            }
+        }
+        
+
+        
+    }
+
+}
+
+int main() 
+{
     srand(time(0));
     bool again;
 
@@ -98,10 +129,7 @@ int main_menu()
 
 
 
-    void delete_Goat(list<Goat> &t)
-    {
-        t.pop_front();
-    }
+
 
 
 
